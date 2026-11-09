@@ -30,7 +30,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
 ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
 
 # 64-bit
 TARGET_SUPPORTS_64_BIT_APPS := true
@@ -103,7 +102,7 @@ else
     	KERNEL_DIRECTORY := $(DEVICE_PATH)/prebuilt
     endif
     BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_DIRECTORY)/dtbo.img
-    TARGET_PREBUILT_KERNEL := $(KERNEL_DIRECTORY)/Image.gz-dtb
+    TARGET_PREBUILT_KERNEL := $(KERNEL_DIRECTORY)/Image.gz
     BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_DIRECTORY)/dtbs
 endif # inline kernel build
 
@@ -183,7 +182,7 @@ ifeq ($(FOX_VARIANT),FBEv2)
    PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/FBEv2/twrp-fbev2.flags:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/twrp.flags
    PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/FBEv2/wrappedkey-fix-fbev2.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/wrappedkey-fix.sh
    TW_MAX_BRIGHTNESS := 4095
-   TW_DEFAULT_BRIGHTNESS := 1638
+   TW_DEFAULT_BRIGHTNESS := 900
 else
    TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/FBEv1/recovery-fbev1.fstab
    PRODUCT_COPY_FILES += $(DEVICE_PATH)/recovery/FBEv1/recovery-fbev1.fstab:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/recovery-fbev1.fstab
